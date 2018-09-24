@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ScrollSnap</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(window).on('scroll',function(){
+            if($(window).scrollTop()) {
+                $('nav').addClass('black');
+            }
+            else {
+                $('nav').removeClass('black');
+            }
+            // let scroller = document.querySelector("#hme");
+            // scroller.addEventListener('click', function(){
+             
+            //     let secAbt = document.querySelector("body");
+            //     secAbt.classList.add("scroll");
+            //     //alert(secAbt.id);
+            // });
+            // let scroller2 = document.querySelector("#abt");
+            // scroller2.addEventListener('click', function(){
+             
+            //     let secAbt = document.querySelector("body");
+            //     secAbt.classList.remove("scroll");
+            //     //alert(secAbt.id);
+            // });
+
+            // let scroller3 = document.querySelector("#srv");
+            // scroller2.addEventListener('click', function(){
+             
+            //     let secAbt = document.querySelector("body");
+            //     secAbt.classList.remove("scroll");
+            //     //alert(secAbt.id);
+            // });
+
+            $('#hme').click(function() {
+                $('body').addClass('scroll');
+            });
+            $('#abt').click(function() {
+                $('body').removeClass('scroll');
+            });
+            $('#srv').click(function() {
+                $('body').removeClass('scroll');
+            });
+
+        })
+    </script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".uli" data-offset="60">
+    <nav class="uli">
+        <div class="logo">
+            <img src="logo-white.png" alt="">
+        </div>
+        <ul>
+            <li><a href="#home" class="active" id="hme">Home</a></li>
+            <li><a href="#about" id="abt">About</a></li>
+            <li><a href="#service" id="srv">Service</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="section one scroll">
+        <div class="section1" id="home">
+            <h3>A subtitle lives here</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ipsum maiores asperiores quidem sapiente error omnis cumque ipsa porro est!</p>
+        </div>
+        <!-- <div class="section1">
+            <h3>A subtitle lives here</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ipsum maiores asperiores quidem sapiente error omnis cumque ipsa porro est!</p>
+        </div>
+        <div class="section1">
+            <h3>A subtitle lives here</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ipsum maiores asperiores quidem sapiente error omnis cumque ipsa porro est!</p>
+        </div> -->
+    </div>
+
+    <div class="section" id="about">
+        <div class="section2">
+            <h3>A subtitle lives here</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ipsum maiores asperiores quidem sapiente error omnis cumque ipsa porro est!</p>
+        </div>
+        <div class="section2">
+            <h3>A subtitle lives here</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ipsum maiores asperiores quidem sapiente error omnis cumque ipsa porro est!</p>
+        </div>
+        <div class="section2">
+            <h3>A subtitle lives here</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ipsum maiores asperiores quidem sapiente error omnis cumque ipsa porro est!</p>
+        </div>
+    </div>
+
+    <div class="section" id="service">
+        <div class="section3">
+            <h3>A subtitle lives here</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ipsum maiores asperiores quidem sapiente error omnis cumque ipsa porro est!</p>
+        </div>
+        <div class="section3">
+            <h3>A subtitle lives here</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ipsum maiores asperiores quidem sapiente error omnis cumque ipsa porro est!</p>
+        </div>
+        <div class="section3">
+            <h3>A subtitle lives here</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ipsum maiores asperiores quidem sapiente error omnis cumque ipsa porro est!</p>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    $(function() {
+	$('nav.uli li a').bind('click',function(event){
+		var $anchor = $(this);
+		
+		$('html, body').stop().animate({
+			scrollLeft: $($anchor.attr('href')).offset().left
+		}, 1000);
+		event.preventDefault();
+	});
+});
+    </script>
